@@ -22,7 +22,7 @@ app.debug = (environ.get('ENV') == 'local')
 
 @manager.command
 def deploy():
-    port = int(environ.get("VCAP_APP_PORT") or app.config['PORT'])
+    port = int(environ.get("PORT") or app.config['PORT'])
     serve(app, port=port)
 
 
